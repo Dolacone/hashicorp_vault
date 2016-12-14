@@ -1,0 +1,15 @@
+---
+- name: vault testing
+  hosts: localhost
+  connection: local
+
+  vars:
+    secret_value_in_vault: "{{ lookup('hashivault', '/secret/path/for/demo', 'demo_key') }}"
+
+  tasks:
+    - debug: var=secret_value_in_vault
+    - hashivault_read:
+        secret: '/secret/path/for/demo'
+        key: 'demo_key'
+      register: 'vault_var'
+    - debug: var=vault_var
