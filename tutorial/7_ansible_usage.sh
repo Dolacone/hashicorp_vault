@@ -6,4 +6,4 @@ pip install ansible-modules-hashivault
 
 export VAULT_TOKEN=`cat ${VAULT_INIT_OUTPUT} | grep '^Initial Root Token' | awk '{print $4}'`
 
-ansible-playbook ansible_playbook.yml
+ansible-playbook sample_ansible_playbook.yml
