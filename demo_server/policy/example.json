@@ -1,0 +1,12 @@
+{
+  "policy": [
+    {"/secret/example/*": "read"}
+  ],
+  "secret":[
+    {
+      "/secret/example/path": {
+        "example_key": "example_value"
+      }
+    }
+  ]
+}
